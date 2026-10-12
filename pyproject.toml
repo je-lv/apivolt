@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "apivolt"
+version = "0.1.0"
+description = "Spec-driven API security testing from the command line (OpenAPI/Swagger and Postman)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+authors = [{ name = "je-lv" }]
+keywords = ["security", "api-security", "pentest", "openapi", "swagger", "postman",
+            "bola", "idor", "jwt", "fuzzing", "scanner"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Information Technology",
+    "Topic :: Security",
+    "Programming Language :: Python :: 3",
+    "Operating System :: POSIX",
+]
+dependencies = ["requests>=2.25", "PyYAML>=5.4", "rich>=13"]
+
+[project.urls]
+Repository = "https://github.com/je-lv/apivolt"
+
+[project.scripts]
+apivolt = "apivolt:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[tool.setuptools]
+py-modules = ["apivolt"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
